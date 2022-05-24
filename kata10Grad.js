@@ -1,11 +1,14 @@
-const multiplicationTable = function(maxValue) {
-  let ans = ""
-  for (let i in maxValue) {
-    let table = ""
-    for (let j in maxValue) {
-      table += 
+const multiplicationTable = function (maxValue) {
+  let ans = "";
+  for (let i = 1; i <= maxValue; i++) {
+    let table = "";
+    for (let j = 1; j <= maxValue; j++) {
+      table += " " + i * j + "";
     }
+    table += "\n";
+    ans += table;
   }
+  return ans;
 };
 
 console.log(multiplicationTable(1));
