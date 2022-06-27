@@ -40,8 +40,16 @@ const queenThreat = function (chessBoard) {
 };
 
 //should return true
-let whiteQueen = [0, 5];
-let blackQueen = [5, 0];
+// let whiteQueen = [0, 5];
+// let blackQueen = [5, 0];
+// let generatedBoard = generateBoard(whiteQueen, blackQueen);
+// console.log(generatedBoard);
+// console.log(queenThreat(generatedBoard));
+
+
+//should return false
+let whiteQueen = [0, 0];
+let blackQueen = [5, 7];
 let generatedBoard = generateBoard(whiteQueen, blackQueen);
 console.log(generatedBoard);
 console.log(queenThreat(generatedBoard));
