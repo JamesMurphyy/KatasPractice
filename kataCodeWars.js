@@ -13,9 +13,9 @@ Given a year, return the century it is in.
 2000 --> 20
 */
 
-//ANSWER  
+//ANSWER
 function century(year) {
-  return Math.ceil(year/100); //using ceiling method to round up to nearest century (100)
+  return Math.ceil(year / 100); //using ceiling method to round up to nearest century (100)
 }
 
 //Practice 2
@@ -34,18 +34,17 @@ patrick feeney => P.F
 
 */
 
-
 //ANSWER
 
-function abbrevName(name){
-  let in1 = ''
-  let in2 = ''
-  
-  in1 = name[0]
+function abbrevName(name) {
+  let in1 = "";
+  let in2 = "";
+
+  in1 = name[0];
   for (let i = 0; i <= name.length; i++) {
     if (name[i] == " ") {
-      in2 = name[i + 1]
+      in2 = name[i + 1];
     }
   }
-  return `${in1.toUpperCase()}.${in2.toUpperCase()}`
+  return `${in1.toUpperCase()}.${in2.toUpperCase()}`;
 }
