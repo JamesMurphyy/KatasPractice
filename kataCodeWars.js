@@ -151,3 +151,10 @@ countBy(2,5) === [2,4,6,8,10]
 
 //ANSWER
 
+function countBy(x, n) {
+  var z = [];
+  for (i = 1; i <= n; i++) {
+      z.push(x * i);
+  }
+  return z;
+}
