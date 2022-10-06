@@ -153,3 +153,34 @@ const unrequitedFollowers = function(data) {
 };
 
 // console.log(unrequitedFollowers(data))
+
+/*
+
+Implement some or all these remaining functions.
+
+Identify who has the most followers over 30
+Identify who follows the most people over 30
+List everyone and their reach (sum of # of followers and # of followers of followers)
+
+*/
+
+// Most Followers Over Thirty
+
+const followersOverCertainAge = function (data, age) {
+  let followersOverCertainAgeObject = makeFollowedByIdsObject(data)
+  // console.log(followersOverCertainAgeObject)
+  for (let profile in followersOverCertainAgeObject) {
+    let followersArray = followersOverCertainAgeObject[profile]
+    // console.log(followersArray)
+    for (let i = 0; i < followersArray.length; i++) {
+      if (data[followersArray[i]]["age"] < age) {
+        followersArray.splice(i, 1);
+      }
+    }
+  }
+return followersOverCertainAgeObject
+};
+
+// console.log(followersOverCertainAge(data, 30))
+
+//
