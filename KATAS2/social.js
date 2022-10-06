@@ -136,4 +136,20 @@ const printAll = function (data) {
 
 // console.log(printAll(data))
 
+//Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
 
+const unrequitedFollowers = function(data) {
+  let unrequitedArray = [];
+  for (let profile in data) {
+    let followingArray = data[profile]["follows"]
+    for (let element of followingArray) {
+      if (!data[profile]["follows"].includes(profile) && !unrequitedArray.includes(data[profile]["name"])) {
+        unrequitedArray.push(data[profile]["name"]);
+      }
+    }
+  }
+  let unrequitedList = unrequitedArray.join(", ")
+  return unrequitedList;
+};
+
+// console.log(unrequitedFollowers(data))
