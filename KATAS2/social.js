@@ -60,7 +60,7 @@ const biggestFollower = function (data) {
 
 //Implement mostPopular() which returns the name of the most popular (most followed) individual.
 const makeEmptyIdObject = function (data) {
-  const ans = {};
+  let ans = {};
   for (let id in data) {
     ans[id] = [];
   }
@@ -86,16 +86,54 @@ const makeFollowedByIdsObject = function (data) {
 // console.log(makeFollowedByIdsObject(data));
 
 const mostPopular = function (data) {
-  const followersList = makeFollowedByIdsObject(data);
+  let followersList = makeFollowedByIdsObject(data);
   let highestNumber = -Infinity;
   let mostPopular = "";
   for (let profile in followersList) {
     if (followersList[profile].length > highestNumber) {
-      highestNumber = followersList[profile].length
-      mostPopular = data[profile]["name"]
+      highestNumber = followersList[profile].length;
+      mostPopular = data[profile]["name"];
     }
   }
   return mostPopular;
 };
 
 // console.log(mostPopular(data));
+
+//Implement printAll() which outputs a list of everyone and for each of them, the names of who they follow and who follows them.
+
+const listOfFollowing = function (profile) {
+  let listOfFollowingIds = data[profile]["follows"];
+  let arrayOfFollowingNames = [];
+  for (let profile of listOfFollowingIds) {
+    arrayOfFollowingNames.push(data[profile]["name"]);
+  }
+  // console.log(arrayOfFollowingNames);
+  let listOfFollowingNames = arrayOfFollowingNames.join(", ");
+  return listOfFollowingNames;
+};
+
+const listOfFollowers = function (profile) {
+  let followedByIdsObject = makeFollowedByIdsObject(data);
+  let listOfFollowersId = followedByIdsObject[profile];
+  let arrayOfFollowersNames = [];
+  for (let profile of listOfFollowersId) {
+    arrayOfFollowersNames.push(data[profile]["name"]);
+  }
+  let listOfFollowersNames = arrayOfFollowersNames.join(", ");
+  return listOfFollowersNames;
+};
+
+const printAll = function (data) {
+  for (const profile in data) {
+    console.log("----");
+    console.log(data[profile]["name"])
+    console.log("Following : ", listOfFollowing(profile));
+    console.log("Followed By : ", listOfFollowers(profile));
+    console.log("----");
+  }
+};
+
+// console.log(printAll(data))
+
+
