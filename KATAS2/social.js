@@ -83,11 +83,19 @@ const makeFollowedByIdsObject = function (data) {
   return followedByIdsObject;
 };
 
-console.log(makeFollowedByIdsObject(data))
+// console.log(makeFollowedByIdsObject(data));
 
 const mostPopular = function (data) {
-  let followerCount;
+  const followersList = makeFollowedByIdsObject(data);
+  let highestNumber = -Infinity;
   let mostPopular = "";
+  for (let profile in followersList) {
+    if (followersList[profile].length > highestNumber) {
+      highestNumber = followersList[profile].length
+      mostPopular = data[profile]["name"]
+    }
+  }
+  return mostPopular;
 };
 
-console.log(mostPopular(data));
+// console.log(mostPopular(data));
