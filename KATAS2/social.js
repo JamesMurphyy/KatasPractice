@@ -127,7 +127,7 @@ const listOfFollowers = function (profile) {
 const printAll = function (data) {
   for (const profile in data) {
     console.log("----");
-    console.log(data[profile]["name"])
+    console.log(data[profile]["name"]);
     console.log("Following : ", listOfFollowing(profile));
     console.log("Followed By : ", listOfFollowers(profile));
     console.log("----");
@@ -138,17 +138,20 @@ const printAll = function (data) {
 
 //Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
 
-const unrequitedFollowers = function(data) {
+const unrequitedFollowers = function (data) {
   let unrequitedArray = [];
   for (let profile in data) {
-    let followingArray = data[profile]["follows"]
+    let followingArray = data[profile]["follows"];
     for (let element of followingArray) {
-      if (!data[profile]["follows"].includes(profile) && !unrequitedArray.includes(data[profile]["name"])) {
+      if (
+        !data[profile]["follows"].includes(profile) &&
+        !unrequitedArray.includes(data[profile]["name"])
+      ) {
         unrequitedArray.push(data[profile]["name"]);
       }
     }
   }
-  let unrequitedList = unrequitedArray.join(", ")
+  let unrequitedList = unrequitedArray.join(", ");
   return unrequitedList;
 };
 
@@ -167,10 +170,10 @@ List everyone and their reach (sum of # of followers and # of followers of follo
 // Most Followers Over Thirty
 
 const followersOverCertainAge = function (data, age) {
-  let followersOverCertainAgeObject = makeFollowedByIdsObject(data)
+  let followersOverCertainAgeObject = makeFollowedByIdsObject(data);
   // console.log(followersOverCertainAgeObject)
   for (let profile in followersOverCertainAgeObject) {
-    let followersArray = followersOverCertainAgeObject[profile]
+    let followersArray = followersOverCertainAgeObject[profile];
     // console.log(followersArray)
     for (let i = 0; i < followersArray.length; i++) {
       if (data[followersArray[i]]["age"] < age) {
@@ -178,9 +181,24 @@ const followersOverCertainAge = function (data, age) {
       }
     }
   }
-return followersOverCertainAgeObject
+  return followersOverCertainAgeObject;
 };
 
 // console.log(followersOverCertainAge(data, 30))
 
-//
+//Who Follows the most people over thirty
+
+const mostFollowersOverCertainAge = function (data, age) {
+  let followersOverCertainAgeObject = followersOverCertainAge(data, age);
+  let highestNumberOfFollowers = -Infinity;
+  let nameOfMostFollowed = "";
+  for (let id in followersOverCertainAgeObject) {
+    if (followersOverCertainAgeObject[id].length > highestNumberOfFollowers) {
+      highestNumberOfFollowers = followersOverCertainAgeObject[id].length;
+      nameOfMostFollowed = data[id]["name"];
+    }
+  }
+  return nameOfMostFollowed;
+};
+
+// console.log(mostFollowersOverCertainAge(data, 30))
