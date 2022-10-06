@@ -44,7 +44,7 @@ ans = {
 
 */
 
-// returns the name of individual who follows the most people
+// Implement a function biggestFollower() which returns the name of the individual who follows the most people.
 const biggestFollower = function (data) {
   let followerCount = -Infinity;
   let biggestFollower = "";
@@ -57,3 +57,37 @@ const biggestFollower = function (data) {
   return biggestFollower;
 };
 // console.log(biggestFollower(data));
+
+//Implement mostPopular() which returns the name of the most popular (most followed) individual.
+const makeEmptyIdObject = function (data) {
+  const ans = {};
+  for (let id in data) {
+    ans[id] = [];
+  }
+  return ans;
+};
+
+// console.log(makeEmptyIdObject(data))
+
+const makeFollowedByIdsObject = function (data) {
+  let followedByIdsObject = makeEmptyIdObject(data);
+  for (let profile in data) {
+    let followingArray = data[profile]["follows"];
+    // console.log(followingArray)
+    for (let element of followingArray) {
+      // console.log("tessstttt", element)
+      // console.log(profile)
+      followedByIdsObject[element].push(profile);
+    }
+  }
+  return followedByIdsObject;
+};
+
+console.log(makeFollowedByIdsObject(data))
+
+const mostPopular = function (data) {
+  let followerCount;
+  let mostPopular = "";
+};
+
+console.log(mostPopular(data));
