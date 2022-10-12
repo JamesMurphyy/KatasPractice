@@ -42,7 +42,7 @@ const bottles = function (investmentOfBottles) {
     capsLeftover: bottlesFromEmpties % 4,
   };
 };
-
+  
 // console.log(bottles(10));
 // console.log(bottles(20));
 // console.log(bottles(30));
@@ -65,15 +65,19 @@ const bottles = function (investmentOfBottles) {
 // Have your program accept an argument (argv) that will allow the user to specify the amount (in dollars) that the customer is going to spend. The node script will then calculate the total number of bottles that the customer will receive.
 
 let result = bottles(process.argv.slice(2));
-console.log(result);
+// console.log(result);
 
 // Task 3
 // Enhance the output of your program so that once the amount has been given, it provides a breakdown of how many bottles were purchased, how many were obtained through bottle recycling, and how many were obtained through bottle cap recycling.
 
-
 //Integrated into function
-
-
 
 // Task 4
 // Add to the output, so that the program will tell the customer how many bottles and bottle caps they will have left over. We have to upsell the customer on buying more pop after all!
+
+console.log(
+  `Total Bottles: ${result.totalBottles}, Purchased: ${result.bottlesBought}, from empties: ${result.bottlesFromEmpties}, from bottlecaps: ${result.bottlesFromCaps}`
+);
+console.log(
+  `You have ${result.emptyBottlesLeftover} empty bottles left and ${result.capsLeftover} bottle caps left.`
+);
