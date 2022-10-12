@@ -42,24 +42,6 @@ const bottles = function (investmentOfBottles) {
     capsLeftover: bottlesFromEmpties % 4,
   };
 };
-  
-// console.log(bottles(10));
-// console.log(bottles(20));
-// console.log(bottles(30));
-// console.log(bottles(40));
-
-// for (let i = 0; i <= totalBottles; i++) {
-//   numOfBottleCaps++;
-//   numOfEmptyBottles++;
-// }
-// if (numOfBottleCaps % 4 === 0) {
-//   totalBottles += Math.floor(numOfBottleCaps / 4);
-// }
-// if (numOfEmptyBottles % 2 === 0) {
-//   totalBottles += Math.floor(numOfEmptyBottles / 2)
-// }
-// console.log(numOfBottleCaps, "bottle caps");
-// console.log(numOfEmptyBottles, "empty bottles");
 
 // Task 2
 // Have your program accept an argument (argv) that will allow the user to specify the amount (in dollars) that the customer is going to spend. The node script will then calculate the total number of bottles that the customer will receive.
