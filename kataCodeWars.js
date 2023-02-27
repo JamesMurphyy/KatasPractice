@@ -93,7 +93,7 @@ Examples
 
 //ANSWER
 
-const stringToNumber = function(str){
+const stringToNumber = function (str) {
   // put your code here
   return Number(`${str}`);
 }
@@ -127,8 +127,8 @@ chain(2, [add, mult]);
 
 function chain(input, fns) {
   // implement the "chain" function
-    return fns.reduce(function(input, fn) {return fn(input)}, input)
-  }
+  return fns.reduce(function (input, fn) { return fn(input) }, input)
+}
 
 
 
@@ -154,7 +154,31 @@ countBy(2,5) === [2,4,6,8,10]
 function countBy(x, n) {
   var z = [];
   for (i = 1; i <= n; i++) {
-      z.push(x * i);
+    z.push(x * i);
   }
   return z;
+}
+
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+// For example,
+
+// [true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]
+// The correct answer would be 17.
+
+// Hint: Don't forget to check for bad values like null/undefined
+
+//ANSWER
+function countSheeps(arrayOfSheep) {
+  // TODO May the force be with you
+  let counter = 0
+  arrayOfSheep.forEach(val => {
+    if (val) counter++
+  })
+  return counter
 }
