@@ -177,6 +177,7 @@ function countBy(x, n) {
 // Hint: Don't forget to check for bad values like null/undefined
 
 //ANSWER
+
 function countSheeps(arrayOfSheep) {
   // TODO May the force be with you
   let counter = 0
@@ -206,6 +207,7 @@ function countSheeps(arrayOfSheep) {
 // Requested maximum length will be greater than 0. Input string will not be empty.
 
 //ANSWER
+
 function trim(str, size) {
   if (str.length <= size ) {
     return str
