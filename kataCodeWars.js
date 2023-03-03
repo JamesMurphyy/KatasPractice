@@ -209,11 +209,27 @@ function countSheeps(arrayOfSheep) {
 //ANSWER
 
 function trim(str, size) {
-  if (str.length <= size ) {
+  if (str.length <= size) {
     return str
   }
-  
-  const result = str.slice(0,size)
-  
-  return `${result.length < 4 ? result : result.slice(0,-3)}...`
+
+  const result = str.slice(0, size)
+
+  return `${result.length < 4 ? result : result.slice(0, -3)}...`
 }
+
+//Practice 9
+
+//Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+// Example:
+
+// "riley" --> "Hello Riley!"
+// "JACK"  --> "Hello Jack!"
+
+//ANSWER
+
+var greet = function (name) {
+  let nameChanged = name.toLowerCase();
+  return `Hello ${nameChanged.charAt(0).toUpperCase() + nameChanged.slice(1)}!`;
+};
