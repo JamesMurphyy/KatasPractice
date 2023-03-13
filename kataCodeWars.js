@@ -411,13 +411,13 @@ function sumTwoSmallestNumbers(numbers) {
 
 //ANSWER
 
-function changeMe(moneyIn){
-	switch (moneyIn) {
-  	case '£5': return '20p '.repeat(25).trim()
-  	case '£2': return '20p '.repeat(10).trim()
-  	case '£1': return '20p '.repeat(5).trim()
-  	case '50p': return '20p 20p 10p'
-  	case '20p': return '10p 10p'
+function changeMe(moneyIn) {
+  switch (moneyIn) {
+    case '£5': return '20p '.repeat(25).trim()
+    case '£2': return '20p '.repeat(10).trim()
+    case '£1': return '20p '.repeat(5).trim()
+    case '50p': return '20p 20p 10p'
+    case '20p': return '10p 10p'
     default: return moneyIn
   }
 }
@@ -433,3 +433,10 @@ function changeMe(moneyIn){
 // + , .concat() & .join() will not be allowed in this exercise. I have also removed some other methods that can be used to cheat!
 
 // If one of the arguments is a number your code must coerce it into being a string.
+
+//ANSWER
+
+function joinStrings(string1, string2) {
+  // code here
+  return `${string1.toString()} ${string2.toString()}`
+}
