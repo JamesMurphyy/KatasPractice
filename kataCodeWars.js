@@ -457,3 +457,6 @@ function joinStrings(string1, string2) {
 
 //ANSWER
 
+function periodIsLate(last, today, cycleLength) {
+  return ((today - last) / 86400000) > cycleLength ? true : false
+}
