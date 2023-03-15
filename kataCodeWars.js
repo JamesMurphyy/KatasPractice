@@ -505,3 +505,33 @@ function boolToWord(bool) {
   //...
   return bool ? "Yes" : "No"
 }
+
+// Practice 21
+
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+// Return your answer as a number.
+
+//ANSWER
+
+function sumMix(x) {
+  let sum = 0
+  for (let val of x) {
+    if (typeof val === "string") {
+      sum += Number(val)
+    } else {
+      sum += val
+    }
+  }
+  return sum
+}
+
+//OR
+
+function sumMix(x) {
+  return x.map(a => +a).reduce((a, b) => a + b);
+}
+
+//OR
+
+const sumMix = x => x.reduce((a, b) => +b + a, 0)
