@@ -494,3 +494,14 @@ function nearestSq(n) {
   for (i = j = n; Math.sqrt(i) % 1 != 0 && Math.sqrt(j) % 1 != 0; i++, j--);
   return Math.sqrt(i) % 1 == 0 ? i : j
 }
+
+// Practice 20
+
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+//ANSWER
+
+function boolToWord(bool) {
+  //...
+  return bool ? "Yes" : "No"
+}
