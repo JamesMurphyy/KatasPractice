@@ -678,3 +678,51 @@ function hero(bullets, dragons) {
   //Get Coding!
   return ((dragons * 2) <= bullets) ? true : false;
 }
+
+//Practice 27
+
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+
+// ANSWER
+
+function descendingOrder(n) {
+  //...
+  let nString = `${n}`
+  return Number(nString.split("").sort(function (a, b) { return b - a }).join(""))
+}
+
+// OR
+
+function descendingOrder(n) {
+  return parseInt(String(n).split('').sort().reverse().join(''))
+}
+
+//Practice 28
+
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+// Waiting for translations and Feedback! Thanks!
+
+// ANSWER
+
+function paperwork(n, m) {
+  return (n < 0 || m < 0) ? 0 : (n * m);
+}
+
+
+//Practice 29
+
+
+// ANSWER
