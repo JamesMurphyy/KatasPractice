@@ -625,11 +625,43 @@ function sum(numbers) {
 // ANSWER
 
 function chromosomeCheck(sperm) {
-  return (sperm === "XY")? "Congratulations! You're going to have a son.": "Congratulations! You're going to have a daughter."
+  return (sperm === "XY") ? "Congratulations! You're going to have a son." : "Congratulations! You're going to have a daughter."
 }
 
 //OR
 
 function chromosomeCheck(sperm) {
   return `Congratulations! You're going to have a ${sperm === 'XY' ? 'son' : 'daughter'}.`
+}
+
+
+//Practice 25
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+// Complete the method which accepts such an array, and returns that single different number.
+
+// The input array will always be valid! (odd-length >= 3)
+
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+
+//ANSWER
+
+function stray(numbers) {
+  return numbers.find((e) => numbers.filter((v) => v === e).length === 1);
+}
+
+// OR
+
+const stray = nums => nums.reduce((a, b) => a ^ b);
+
+// OR
+
+function stray(numbers) {
+  for (var i in numbers) {
+    if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) { return numbers[i] }
+  }
 }
