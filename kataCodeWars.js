@@ -821,3 +821,25 @@ function SeriesSum(n) {
   }
   return ans.toFixed(2);
 };
+
+
+// Practice 33
+
+// Given a mixed array of number and string representations of integers, add up the non-string integers and subtract the total of the string integers.
+
+// Return as a number.
+
+// ANSWER
+
+function divCon(x) {
+  let sumOfString = 0
+  let sumOfNumbers = 0
+  for (let num of x) {
+    if (typeof num === "string") {
+      sumOfString += Number(num)
+    } else if (typeof num === "number") {
+      sumOfNumbers += num
+    }
+  }
+  return (sumOfNumbers - sumOfString)
+}
