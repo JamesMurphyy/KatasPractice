@@ -857,3 +857,28 @@ function getAge(inputString) {
   // return the girl's correct age as an integer. Happy coding :) 
   return parseInt(inputString.split(" ")[0])
 }
+
+//Practice 35
+
+// Complete the solution so that it reverses the string passed into it.
+
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+
+//ANSWER
+
+function solution(str) {
+  return str.split("").reverse().join("")
+}
+
+//Practice 36
+
+// Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+
+//ANSWER
+
+function isTriangle(a, b, c) {
+  return (a + b > c && b + c > a && c + a > b) ? true : false;
+}
