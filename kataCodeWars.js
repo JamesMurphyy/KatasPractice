@@ -954,3 +954,35 @@ function getMiddle(s) {
     ? s.charAt(Math.floor(middle))
     : s.slice(middle - 1, middle + 1);
 }
+
+// Practice 40
+
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+// Note: input will never be an empty string
+
+// ANSWER
+
+function fakeBin(x) {
+  let ans = ""
+  for (let val of x.split("")) {
+    if (val < 5) {
+      ans += "0"
+    } else {
+      ans += "1"
+    }
+  }
+  return ans;
+}
+
+//OR
+
+function fakeBin(x) {
+  return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+
+//OR
+
+function fakeBin(x) {
+  return x.replace(/\d/g, d => d < 5 ? 0 : 1);
+}
