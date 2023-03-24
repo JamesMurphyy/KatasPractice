@@ -882,3 +882,28 @@ function solution(str) {
 function isTriangle(a, b, c) {
   return (a + b > c && b + c > a && c + a > b) ? true : false;
 }
+
+//Practice 37
+
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+// Examples:
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+
+//ANSWER
+
+function solution(str, ending) {
+  // TODO: complete
+  return str.endsWith(ending)
+}
+
+//Practice 38
+
+// Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+// [Make sure you type the exact thing I wrote or the program may not execute properly]
+
+//ANSWER
+
