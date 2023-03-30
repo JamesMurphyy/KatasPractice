@@ -1190,3 +1190,30 @@ class SmallestIntegerFinder {
     return Math.min(...args)
   }
 }
+
+
+// Practice 48
+
+// Write a function insert_dash(num) / insertDash(num) / InsertDash(int num) that will insert dashes ('-') between each two odd digits in num. For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd digit.
+
+// Note that the number will always be non-negative (>= 0).
+
+//ANSWER
+
+function insertDash(num) {
+  let ans = []
+  num = num.toString().split('')
+
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] % 2 !== 0 && num[i + 1] % 2 !== 0) {
+      ans.push(num[i])
+      ans.push('-')
+    }
+    else {
+      ans.push(num[i])
+    }
+  }
+
+  if (ans[ans.length - 1] == '-') ans.pop()
+  return ans.join("")
+}
