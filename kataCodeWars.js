@@ -1218,7 +1218,7 @@ function insertDash(num) {
   return ans.join("")
 }
 
-// Practice 48
+// Practice 49
 
 // Given an array of numbers, return the difference between the largest and smallest values.
 
