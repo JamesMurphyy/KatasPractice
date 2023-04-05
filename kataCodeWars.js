@@ -1275,3 +1275,13 @@ function likes(names) {
     return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
   }
 }
+
+// Practice 51
+
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+//ANSWER
+
+function evenOrOdd(number) {
+  return (number % 2 === 0) ? "Even" : "Odd"
+}
