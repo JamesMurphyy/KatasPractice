@@ -122,3 +122,42 @@ var removeDuplicates = function (nums) {
   return nums.length
 };
 
+// Question 4
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+
+
+//   Example 1:
+
+// Input: strs = ["flower", "flow", "flight"]
+// Output: "fl"
+// Example 2:
+
+// Input: strs = ["dog", "racecar", "car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+
+// ANSWER
+
+/**
+ * @param {string[]} strs
+* @return {string}
+*/
+var longestCommonPrefix = function (strs) {
+
+  let prevalues = '', values = '';
+  for (let i = 0; i < strs[0].length; i++) {
+    values += strs[0][i];
+
+    for (let j = 0; j < strs.length; j++) {
+      if (!strs[j].startsWith(values)) {
+        return prevalues;
+      }
+    }
+    prevalues = values;
+  }
+  return values;
+};
