@@ -3,7 +3,7 @@
 //   let trimmedText = text.trim();  
 //   let ans = "";
 //   let space = "%20";
- 
+
 // for (let i = 0; i < trimmedText.length; i++){
 //   if (trimmedText[i] === " "){
 //     ans = ans + space;
@@ -14,8 +14,8 @@
 //   return ans;
 // };
 
-const urlEncode = function(text) {
-  let trimmedText = text.trim();  
+const urlEncode = function (text) {
+  let trimmedText = text.trim();
   return trimmedText.replace(/\s+/g, "%20")
 };
 
