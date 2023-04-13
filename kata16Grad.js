@@ -2,6 +2,7 @@ const makeCase = function(input, case1) {
   // Put your solution here
   if (case1 === "camel") {
     return input.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index){
+      console.log(input, word, index)
       return index == 0 ? word.toLowerCase() : word.toUpperCase()
     }).replace(/\s+/g, "");
   }
