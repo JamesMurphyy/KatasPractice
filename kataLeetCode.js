@@ -259,3 +259,23 @@ const twoSum = function (nums, target) {
   }
 }
 
+var lengthOfLongestSubstring = function (s) {
+  let k = 0;
+  let maxLength = 0;
+  for (let i = 0; i < s.length; i++) {
+
+      for (let j = k; j < i; j++) {
+          console.log(i,s[i], j,s[j], k)
+          if (s[i] === s[j]) {
+              k = j + 1;
+              break;
+          }
+      }
+
+      if (i - k + 1 > maxLength) {
+          maxLength = i - k + 1;
+      }
+  }
+
+  return maxLength;
+};
