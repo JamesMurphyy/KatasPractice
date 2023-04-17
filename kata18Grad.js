@@ -3,7 +3,7 @@ const squareCode = message => {
   let length = Math.ceil(Math.sqrt(string.length));
   // console.log(length)
   // console.log(string)
-  return string.reduce((acc, l, i) => (acc[i%length] += l, acc), new Array(length).fill('')).join(' ');
+  return string.reduce((acc, l, i) => (acc[i % length] += l, acc), new Array(length).fill('')).join(' ');
 };
 
 // , new Array(length).fill('')
