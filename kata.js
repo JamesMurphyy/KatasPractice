@@ -1,9 +1,10 @@
-
 const sumLargestNumbers = function (data) {
-  data = data.sort(function (a,b) { return a - b; });
-  return(data[data.length-1]) + (data[data.length-2])
-} 
-
+  data = data.sort(function (a, b) {
+    return a - b;
+  });
+  return data[data.length - 1] + data[data.length - 2];
+};
+//test
 
 console.log(sumLargestNumbers([4, 12, 2]));
 console.log(sumLargestNumbers([40, 2, 3]));
