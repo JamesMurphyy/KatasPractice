@@ -4,7 +4,6 @@ const sumLargestNumbers = function (data) {
   });
   return data[data.length - 1] + data[data.length - 2];
 };
-//test
 
 console.log(sumLargestNumbers([4, 12, 2]));
 console.log(sumLargestNumbers([40, 2, 3]));
