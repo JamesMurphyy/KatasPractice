@@ -7,6 +7,7 @@ coins[1] = nickels ==> $00.05
 coins[2] = dimes ==> $00.10
 coins[3] = quarters ==> $00.25
 
+
 So for example:
 coinCombo(6) --> [1, 1, 0, 0]
 */
