@@ -26,9 +26,20 @@ Random test cases of varying lengths
 */
 
 function removeFirstAndLast(str) {
-  return str.length >= 2 ? str.substring(1, str.length - 1) : false;
+  return str.substring(1, str.length - 1);
 }
 
 function removeChar(str) {
   return str.slice(1, -1);
 }
+
+console.log(
+  removeChar("eloquent"), //should equal 'loquen'
+  removeChar("country"), //should equal 'ountr'
+  removeChar("person"), //should equal 'erso'
+  removeChar("place"), //should equal 'lac'
+  removeChar("ooopsss"), //should equal 'oopss'
+  removeChar("programming"), //should equal 'rogrammin'
+  removeChar("javascript"), //should equal 'avascrip'
+  removeChar("ab"), //should equal ''
+);
